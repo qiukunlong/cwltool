@@ -1,80 +1,84 @@
 Common Workflow Language
 ========================
 
-The Common Workflow Language (CWL) is an informal, multi-vendor working group
-consisting of various organizations and individuals that have an interest in
-portability of data analysis workflows.  Our goal is to create specifications
-that enable data scientists to describe analysis tools and workflows that are
-powerful, easy to use, portable, and support reproducibility.
+[![GitHub stars](https://img.shields.io/github/stars/common-workflow-language/common-workflow-language.svg)](https://github.com/common-workflow-language/common-workflow-language/stargazers) [![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/common-workflow-language/common-workflow-language?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
-CWL builds on technologies such as [JSON-LD](http://json-ld.org) and
-[Avro](https://avro.apache.org/) for data modeling and
-[Docker](http://docker.com) for portable runtime environments.
+The Common Workflow Language (CWL) is a specification for describing analysis
+workflows and tools that are portable and scalable across a variety of software
+and hardware environments, from workstations to cluster, cloud, and high
+performance computing (HPC) environments.  CWL is designed to meet the needs of
+data-intensive science, such as Bioinformatics, Medical Imaging, Astronomy,
+Physics, and Chemistry.
 
-CWL is designed to express workflows for data-intensive science, such as
-Bioinformatics, Medical Imaging, Chemistry, Physics, and Astronomy.
+CWL is developed by an informal, multi-vendor working group consisting of
+organizations and individuals interested enabling scientists to share data
+analysis workflows.  [The CWL project is on Github.](https://github.com/common-workflow-language/common-workflow-language)
 
-## CWL Specification
+CWL builds on technologies such as [JSON-LD](http://json-ld.org)
+for data modeling and [Docker](http://docker.com) for portable runtime
+environments.
 
-The current stable specification is [draft 3](http://www.commonwl.org/draft-3/):
+## User Guide
 
-http://www.commonwl.org/draft-3/
+The [CWL user guide (v1.0)](http://www.commonwl.org/v1.0/UserGuide.html) provides a
+gentle introduction to learning how to write CWL command line tool and workflow
+descriptions.
 
-The next work-in-progress specification is [draft 4](http://www.commonwl.org/draft-4/):
+## Specification
 
-http://www.commonwl.org/draft-4/
-
-Older drafts: [draft-1](https://github.com/common-workflow-language/common-workflow-language/tree/master/draft-1), [draft-2](http://www.commonwl.org/draft-2/)
+For developers and advanced users, the current
+[CWL specification (v1.0)](http://www.commonwl.org/v1.0/) provides
+authoritative documentation of the execution of CWL documents.  Links older
+drafts:
+[draft-1](https://github.com/common-workflow-language/common-workflow-language/tree/master/draft-1),
+[draft-2](http://www.commonwl.org/draft-2/),
+[draft-3](http://www.commonwl.org/draft-3/)
 
 ### Citation
 
-Please cite https://dx.doi.org/10.6084/m9.figshare.3115156.v1
+Please cite https://dx.doi.org/10.6084/m9.figshare.3115156.v2
 
 ## Implementations
 
-Some of the software supporting running Common Workflow Language tools or workflows:
+|Software|Description|CWL support|Platform support|Platform Maturity|
+|--------|-----------|-----------|--------|--------|
+|[cwltool](https://github.com/common-workflow-language/cwltool)|Reference implementation of CWL|[![Build Status](https://ci.commonwl.org/job/cwltool-conformance/badge/icon)](http://ci.commonwl.org/job/cwltool-conformance/lastBuild/testReport/)|Linux, OS X, local execution only|Production|
+|[Arvados](https://arvados.org)|Distributed computing platform for data analysis on massive data sets. [Using CWL on Arvados](http://doc.arvados.org/user/cwl/cwl-runner.html)|[![Build Status](https://ci.commonwl.org/job/arvados-conformance/badge/icon)](http://ci.commonwl.org/job/arvados-conformance/lastBuild/testReport/)|AWS, GCP, Azure, Slurm|Production|
+|[Toil](https://github.com/BD2KGenomics/toil)|Toil is a workflow engine entirely written in Python.|[![Build Status](https://ci.commonwl.org/job/toil-conformance/badge/icon)](http://ci.commonwl.org/job/toil-conformance/lastBuild/testReport/)|AWS, GCP, Azure, OpenStack, Grid Engine, Mesos|Production|
+|[Rabix Bunny](https://github.com/rabix/bunny)|Reproducible Analyses for Bioinformatics|[![Build Status](https://ci.commonwl.org/buildStatus/icon?job=rabix-conformance)](https://ci.commonwl.org/job/rabix-conformance/)|Java|alpha|
+|[Apache Taverna](http://taverna.incubator.apache.org/)|Domain-independent Workflow Management System|[alpha](https://issues.apache.org/jira/browse/TAVERNA-900)|Java|Production|
+|[Galaxy](https://galaxyproject.org/)|Web-based platform for data intensive biomedical research.|[alpha](https://github.com/common-workflow-language/galaxy)|Python|Production|
+|[AWE](https://github.com/MG-RAST/AWE)|Workflow and resource management system for bioinformatics data analysis.|[alpha](https://github.com/wgerlach/AWE)|Go|Production|
+|[Funnel](https://github.com/bmeg/funnel)|Use Google Genomics Pipeline API with CWL|alpha|GCP|alpha|
+|[xenon-cwl-runner](https://github.com/NLeSC/xenon-cwl-runner)|Run CWL workflows using Xenon|alpha|[any Xenon backend](http://nlesc.github.io/Xenon/): local, ssh, SLURM, Torque, Grid Engine|Production|
 
-* [cwltool (reference implementation)](https://github.com/common-workflow-language/cwltool),
-  [cwltool wiki page](https://github.com/common-workflow-language/common-workflow-language/wiki/cwltool-%28reference-implementation%29)
-* [Rabix](https://github.com/rabix/rabix),
-  [Rabix wiki page](https://github.com/common-workflow-language/common-workflow-language/wiki/Rabix)
-* [Arvados](https://arvados.org),
-  [Arvados wiki page](https://github.com/common-workflow-language/common-workflow-language/wiki/Arvados)
-* [Galaxy](https://github.com/common-workflow-language/Galaxy),
-  [Galaxy wiki page](https://github.com/common-workflow-language/common-workflow-language/wiki/Galaxy)
-* [Parallel Recipes](https://github.com/yvdriess/precipes),
-  [Parallel Recipes wiki page](https://github.com/common-workflow-language/common-workflow-language/wiki/Parallel-Recipes)
-* [Toil](https://github.com/BD2KGenomics/toil),
-  [Toil wiki page](https://github.com/common-workflow-language/common-workflow-language/wiki/Toil)
-* [CancerCollaboratory](https://github.com/CancerCollaboratory),
-  [CancerCollaboratory wiki page](https://github.com/common-workflow-language/common-workflow-language/wiki/CancerCollaboratory)
-* [Airflow (SciDAP)](https://github.com/SciDAP/scidap),
-  [Airflow wiki page](https://github.com/common-workflow-language/common-workflow-language/wiki/SciDAP)
-* [cwl2script](https://github.com/common-workflow-language/cwl2script),
-  [cwl2script page](https://github.com/common-workflow-language/common-workflow-language/wiki/cwl2script)
-* [Apache Taverna](http://taverna.incubator.apache.org/),
-  [Apache Taverna wiki page](https://github.com/common-workflow-language/common-workflow-language/wiki/Taverna)
 
-## Examples
+## Repositories of CWL Tools and Workflows
 
-[Github repository of example tools and workflows.](https://github.com/common-workflow-language/workflows)
+|Repository|Description|
+|----|-----------|
+|[Workflows repository](https://github.com/common-workflow-language/workflows)|Git repository of user contributed tools and workflows.|
+|[Dockstore tool registry](http://dockstore.org)|An open platform for sharing Docker-based tools described with the Common Workflow Language used by the GA4GH.|
 
-## Development and testing
+## Software for working with CWL
 
-[The CWL project is on Github.](https://github.com/common-workflow-language/common-workflow-language)
+|Software|Description|
+|--------|-----------|
+|[cwltest](https://github.com/common-workflow-language/cwltest)|CWL testing framework,  automated testing of tools and workflows written with CWL|
+|[cwl-upgrader](https://github.com/common-workflow-language/cwl-upgrader)|Upgrade CWL documents from draft-3 to v1.0|
+|[argparse2tool](https://github.com/erasche/argparse2tool#cwl-specific-functionality)|Generate CWL CommandLineTool wrappers (and/or Galaxy tool descriptions) from Python programs that use argparse.  Also supports the [click](http://click.pocoo.org/5/) argument parser.|
+|[cwl2argparse](https://github.com/common-workflow-language/cwl2argparse)|Generate Python argparse code from CWL CommandLineTool description.|
+|[pypi2cwl](https://github.com/common-workflow-language/pypi2cwl)|Automatically run argparse2cwl on any package in PyPi|
+|[cwlavro](https://github.com/common-workflow-language/cwlavro)|Java classes for loading CWL documents|
+|[acd2cwl](https://github.com/common-workflow-language/acd2cwl)|CWL generator for ACD (EMBOSS) files |
+|[CWLviewer](https://github.com/MarkRobbo/CWLViewer)|A web application to view and share Common Workflow Language workflows|
 
-[![GitHub
-stars](https://img.shields.io/github/stars/common-workflow-language/common-workflow-language.svg)](https://github.com/common-workflow-language/common-workflow-language/stargazers)
+## Support, Community and Contributing
 
-There is a Jenkins server maintained by Curoverse that runs tests for the
-reference implementation, builds and uploads packages, and builds and uploads
-Docker images:
+The recommended place to ask a question about all things CWL is on
+[Biostars](https://www.biostars.org/t/cwl/).
 
-https://ci.curoverse.com/job/common-workflow-language/
-
-Current build status: [![Build Status](https://ci.curoverse.com/buildStatus/icon?job=common-workflow-language)](https://ci.curoverse.com/job/common-workflow-language/)
-
-## Community and Contributing
+[![Biostars CWL](https://www.biostars.org/static/biostar2.logo.png)](https://www.biostars.org/t/cwl/)
 
 If you are interested in learning more or contributing ideas or code,
 [come chat with us on Gitter](https://gitter.im/common-workflow-language/common-workflow-language),
@@ -83,10 +87,8 @@ join the [mailing list common-workflow-language on Google Groups](https://groups
 [fork the repository](https://github.com/common-workflow-language/common-workflow-language)
 and send a pull request!
 
-[![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/common-workflow-language/common-workflow-language?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
-
 Your CWL Community Engineer, Michael R. Crusoe, publishes a blog about his work
-with weekly updates at http://mrc.commonwl.org.
+with updates at http://mrc.commonwl.org.
 
 ### Code of Conduct
 
@@ -137,6 +139,7 @@ Conduct](https://github.com/common-workflow-language/common-workflow-language/bl
 * Maxim Mikheev <mikhmv@biodatomics.com>
 * Tim Pierce <twp@unchi.org>
 * Josh Randall <joshua.randall@sanger.ac.uk>
+* Janko Simonović <janko.simonovic@sbgenomics.com>
 * Stian Soiland-Reyes <soiland-reyes@cs.manchester.ac.uk>
 * Luka Stojanovic <luka.stojanovic@sbgenomics.com>
 * Nebojša Tijanić <nebojsa.tijanic@sbgenomics.com>
