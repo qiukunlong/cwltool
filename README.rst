@@ -4,6 +4,11 @@ Common workflow language tool description reference implementation
 
 CWL Conformance test: |Build Status|
 
+Travis: |Unix Build Status|
+
+.. |Unix Build Status| image:: https://img.shields.io/travis/common-workflow-language/cwltool/master.svg?label=unix%20build
+   :target: https://travis-ci.org/common-workflow-language/cwltool
+
 This is the reference implementation of the Common Workflow Language.  It is
 intended to be feature complete and provide comprehensive validation of CWL
 files as well as provide other tools related to working with CWL.
@@ -39,6 +44,23 @@ To install from source::
 Remember, if co-installing multiple CWL implementations then you need to
 maintain which implementation ``cwl-runner`` points to via a symbolic file
 system link or `another facility <https://wiki.debian.org/DebianAlternatives>`_.
+
+Running tests locally
+---------------------
+
+-  Running basic tests ``(/tests)``:
+
+.. code:: bash
+
+    python setup.py test
+
+-  Running the entire suite of CWL conformance tests:
+
+The GitHub repository for the CWL specifications contains a script that tests a CWL
+implementation against a wide array of valid CWL files using the `cwltest <https://github.com/common-workflow-language/cwltest>`_
+program
+
+Instructions for running these tests can be found in the Common Workflow Language Specification repository at https://github.com/common-workflow-language/common-workflow-language/blob/master/CONFORMANCE_TESTS.md
 
 Run on the command line
 -----------------------
